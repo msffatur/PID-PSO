@@ -12,19 +12,14 @@ modref = 6;
 [acc,spd,dis] = init_reference(modref);
 [acc_ref,spd_ref,dis_ref] = add_reference(acc,spd,dis,20);
 
-% Controller Reference
-[ZN,CC] = HeuristicMethod(G);
-Ts = 0.1;
-
 %% Particle Swarm Optimization Options
 
 Swarm.Options.Particles = 100;
 Swarm.Options.MaximumIteration = 150;
 Swarm.Options.Varibles = 6;
-Swarm.Options.Boundary.Constant = 1.5e+04;
+Swarm.Options.Boundary.Constant = 1e+04;
 %Swarm.Options.Boundary.UpperBound = ones(1,6);
-Swarm.Options.Boundary.UpperBound = [1 1 1 0 0 0];
-%Swarm.Options.Boundary.UpperBound = [CC(1) CC(2) CC(3) CC(1)/8.125 CC(2)/8.125 CC(3)/8.125];
+Swarm.Options.Boundary.UpperBound = [1.1 0.22 0.04 1.1 0.22 0.04];
 Swarm.Options.Boundary.LowerBound = zeros(1,6);
 Swarm.Options.SelfAdjustmentConstant = 1.49;
 Swarm.Options.SocialAdjustmentConstant = 1.49;
