@@ -1,8 +1,8 @@
 function [a,v,s] = pick_reference(numref)
 
-acc = 'acceleration';
-spd = 'speed';
-dis = 'position';
+acc = 'percepatan';
+spd = 'kecepatan';
+dis = 'jarak';
 format = '.mat';
 a = append(acc,string(numref),format);
 v = append(spd,string(numref),format);
